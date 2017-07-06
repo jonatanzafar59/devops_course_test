@@ -4,7 +4,7 @@ from portscan import __version__
 
 requires = ['argparse', 'socket']
 dist = setup(
-    name='supervisor',
+    name='scanner',
     version=__version__,
     description="A system for controlling process state under UNIX",
     author="Chris McDonough",
