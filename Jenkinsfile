@@ -3,7 +3,22 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'tar -czvf flask_hello.tar.gz flask_hello'
+        parallel(
+          "build": {
+            sh './distrib.sh build'
+            
+          },
+          "test_connection": {
+            sh './distrib.sh test_connection'
+            
+          }
+        )
+      }
+    }
+    stage('setup') {
+      steps {
+        sh './distrib.sh copy'
+        sh './distrib.sh extract'
       }
     }
   }
