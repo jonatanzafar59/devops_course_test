@@ -3,7 +3,16 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh './distrib.sh build'
+        parallel(
+          "build": {
+            sh './distrib.sh build'
+            
+          },
+          "test_connection": {
+            sh './distrib.sh test_connection'
+            
+          }
+        )
       }
     }
   }
