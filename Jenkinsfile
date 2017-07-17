@@ -15,5 +15,11 @@ pipeline {
         )
       }
     }
+    stage('setup') {
+      steps {
+        sh './distrib.sh copy'
+        sh './distrib.sh extract'
+      }
+    }
   }
 }
