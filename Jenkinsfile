@@ -6,12 +6,10 @@ pipeline {
     
   }
   stages {
-    stage('test') {
+    stage('') {
       steps {
-        sh 'echo "radio"'
-        sh 'hostname'
-        sh 'whoami'
-        sh 'sleep 15'
+        sh 'cd flask_hello/'
+        sh 'pip3 install -r requirements.txt'
       }
     }
   }
