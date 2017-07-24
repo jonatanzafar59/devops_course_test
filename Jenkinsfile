@@ -8,8 +8,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'cd flask_hello/'
-        sh 'pip3 install -r requirements.txt'
+        sh 'pip3 install -r flask_hello/requirements.txt'
       }
     }
   }
