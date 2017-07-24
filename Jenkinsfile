@@ -1,24 +1,17 @@
 pipeline {
-  agent any
-  stages {
-    stage('build') {
-      steps {
-        parallel(
-          "build": {
-            sh './distrib.sh build'
-            
-          },
-          "test_connection": {
-            sh './distrib.sh test_connection'
-            
-          }
-        )
-      }
+  agent {
+    node {
+      label 'docker-slave'
     }
-    stage('setup') {
+    
+  }
+  stages {
+    stage('') {
       steps {
-        sh './distrib.sh copy'
-        sh './distrib.sh extract'
+        sh 'echo "radio"'
+        sh 'hostname'
+        sh 'whoami'
+        sh 'sleep 15'
       }
     }
   }
