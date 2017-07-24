@@ -11,5 +11,11 @@ pipeline {
         sh 'pip3 install -r flask_hello/requirements.txt'
       }
     }
+    stage('test') {
+      steps {
+        sh 'python3 flask_hello/run.py &'
+        sh 'curl http://localhost:5555/'
+      }
+    }
   }
 }
