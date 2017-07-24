@@ -6,7 +6,7 @@ pipeline {
     
   }
   stages {
-    stage('') {
+    stage('test') {
       steps {
         sh 'echo "radio"'
         sh 'hostname'
