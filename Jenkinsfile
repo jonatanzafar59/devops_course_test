@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'docker ps'
+        sh 'docker build -t hello:0.0.1 .'
       }
     }
   }
