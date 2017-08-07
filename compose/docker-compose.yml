@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+
+  jenkins-master:
+    image: jenkins/jenkins:lts
+
+  nginx:
+    image: nginx:1.12-alpine
+#    ports:
+#      - "80:2222"
+    volumes:
+      - "$PWD/nginx-jenkins.conf:/etc/nginx/conf.d/jenkins.conf"
+    links:
+      - jenkins-master
