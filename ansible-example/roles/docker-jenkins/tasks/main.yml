@@ -1,0 +1,4 @@
+---
+# tasks file for docker-jenkins
+
+- include: deploy.yml

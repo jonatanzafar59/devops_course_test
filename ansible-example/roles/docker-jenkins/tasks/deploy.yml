@@ -1,0 +1,13 @@
+---
+# tasks file for docker-jenkins
+
+- name: Deploy jenkins master container
+  docker_container:
+    name: jenkins-master
+    image: jenkins/jenkins:lts-alpine
+    state: started
+    published_ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - jenkins_home:/var/jenkins_home

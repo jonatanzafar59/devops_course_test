@@ -1,3 +1,7 @@
 ---
 
 - include: "platform/{{ ansible_distribution|lower }}.yml"
+
+- name: Ansible docker_container pre req
+  pip:
+    name: docker-py

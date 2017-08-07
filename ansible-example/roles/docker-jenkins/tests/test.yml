@@ -1,7 +1,5 @@
 ---
 - hosts: localhost
-  sudo: true
-
+  remote_user: root
   roles:
-    - docker
     - docker-jenkins
