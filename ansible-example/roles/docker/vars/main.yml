@@ -1,0 +1,5 @@
+---
+# vars file for docker
+
+docker_config_directory: /etc/systemd/system/docker.service.d
+docker_api_port: 4243
